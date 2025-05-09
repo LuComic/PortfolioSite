@@ -4,15 +4,20 @@
 	import movieSitePic from '../images/moviesitebanner.png';
 	import terminalportPic from '../images/terminalportbanner.png';
 	import termnotesPic from '../images/termnotesbanner.png';
+	import { fly } from 'svelte/transition';
+	import { clickToCopy } from '$lib/functions/clickToCopy.js';
+
+	let copied = $state(false);
 </script>
 
 {#if status}
 	<button
 		class="fixed top-0 left-0 flex h-full w-full cursor-default items-center justify-center bg-black/80"
-		onclick={() => (status = false)}
+		on:click|self={() => (status = false)}
 	>
 		<div
-			class="card preset-filled-surface-100-900 border-surface-200-800 divide-surface-200-800 block max-w-xl divide-y overflow-hidden border-[1px]"
+			class="card border-surface-200-800 divide-surface-200-800 block max-w-xl divide-y overflow-hidden border-[1px] bg-gray-950"
+			transition:fly={{ y: 200, duration: 200 }}
 		>
 			<header>
 				{#if topic === 'noortekunst'}
@@ -25,7 +30,7 @@
 					<img src={terminalportPic} class="w-full object-cover" alt="noorteKunst" />
 				{/if}
 			</header>
-			<article class="space-y-4 p-4">
+			<article class="space-y-4 p-4 select-text">
 				<div>
 					{#if topic === 'noortekunst'}
 						<h2 class="h6 text-left">HTML, CSS, Javascript</h2>
@@ -41,7 +46,7 @@
 						<h3 class="h3 text-left">terminalport</h3>
 					{/if}
 				</div>
-				<p class="text-left opacity-60">
+				<p class="light-text text-left opacity-60">
 					{#if topic === 'noortekunst'}
 						noorteKunst is a web gallery combined with social media aspects for young starting
 						artists to start or boost their art jounrey. A simple way to stand out (which is
@@ -66,18 +71,42 @@
 					{/if}
 				</p>
 			</article>
-			<footer class="flex items-center justify-between gap-4 p-4">
-				<small class="opacity-60">
+			<footer class="flex items-center justify-between gap-4 p-4 select-text">
+				<small class="light-text opacity-60">
 					{#if topic === 'noortekunst'}
-						<a href="noortekunst.ee" class="text-rose-100" target="_blank">noortekunst.ee</a>
+						<a href="noortekunst.ee" class="light-text" target="_blank">noortekunst.ee</a>
 					{:else if topic === 'moviesite'}
-						<a href="https://movie-site-gold.vercel.app" class="text-rose-100" target="_blank"
+						<a href="https://movie-site-gold.vercel.app" class="light-text" target="_blank"
 							>StreamList (beta)</a
 						>
 					{:else if topic === 'termnotes'}
-						pipx install terminalnotes
+						<div
+							use:clickToCopy
+							class="flex cursor-pointer items-center gap-4 duration-200 hover:text-blue-300"
+							on:click={() => {
+								copied = true;
+								setTimeout(() => (copied = false), 2000);
+							}}
+						>
+							pipx install terminalnotes
+							{#if copied}
+								<p class="copied-text">Copied!</p>
+							{/if}
+						</div>
 					{:else if topic === 'terminalport'}
-						npm i terminalport
+						<div
+							use:clickToCopy
+							class="flex cursor-pointer items-center gap-4 duration-200 hover:text-blue-300"
+							on:click={() => {
+								copied = true;
+								setTimeout(() => (copied = false), 3000);
+							}}
+						>
+							npm i terminalport
+							{#if copied}
+								<p class="copied-text">Copied!</p>
+							{/if}
+						</div>
 					{/if}
 				</small>
 			</footer>
@@ -85,4 +114,12 @@
 	</button>
 {/if}
 
-<style lang="postcss"></style>
+<style lang="postcss">
+	.light-text {
+		color: #eef2ff;
+	}
+
+	.copied-text {
+		color: #93c5fd;
+	}
+</style>

@@ -10,9 +10,11 @@
 </div>
 
 <style lang="postcss">
-	:global(html) {
+	:global(html, body) {
+		background-color: #f7fee7;
 	}
 	:global(p, h1, h2, li) {
 		font-family: 'Courier New', Courier, monospace;
+		color: #1d4ed8;
 	}
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import movieSitePic from '../images/movie-site.png';
+	import movieSitePic from '../images/Untitled.png';
 	import { slide } from 'svelte/transition';
 	import DescriptionModal from './DescriptionModal.svelte';
 
