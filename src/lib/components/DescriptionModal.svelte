@@ -16,7 +16,7 @@
 		on:click|self={() => (status = false)}
 	>
 		<div
-			class="card border-surface-200-800 divide-surface-200-800 block max-w-xl divide-y overflow-hidden border-[1px] bg-gray-950"
+			class="card border-surface-200-800 divide-surface-200-800 block max-w-xl divide-y overflow-hidden border-[1px] bg-lime-50"
 			transition:fly={{ y: 200, duration: 200 }}
 		>
 			<header>
@@ -46,7 +46,7 @@
 						<h3 class="h3 text-left">terminalport</h3>
 					{/if}
 				</div>
-				<p class="light-text text-left opacity-60">
+				<p class="text-left">
 					{#if topic === 'noortekunst'}
 						noorteKunst is a web gallery combined with social media aspects for young starting
 						artists to start or boost their art jounrey. A simple way to stand out (which is
@@ -72,17 +72,17 @@
 				</p>
 			</article>
 			<footer class="flex items-center justify-between gap-4 p-4 select-text">
-				<small class="light-text opacity-60">
+				<small>
 					{#if topic === 'noortekunst'}
-						<a href="noortekunst.ee" class="light-text" target="_blank">noortekunst.ee</a>
+						<a href="noortekunst.ee" class="font-bold" target="_blank">noortekunst.ee</a>
 					{:else if topic === 'moviesite'}
-						<a href="https://movie-site-gold.vercel.app" class="light-text" target="_blank"
-							>StreamList (beta)</a
-						>
+						<a href="https://movie-site-gold.vercel.app" class="font-bold" target="_blank">
+							movie-site-gold.vercel.app
+						</a>
 					{:else if topic === 'termnotes'}
 						<div
 							use:clickToCopy
-							class="flex cursor-pointer items-center gap-4 duration-200 hover:text-blue-300"
+							class="flex cursor-pointer items-center gap-4 font-bold duration-200 hover:text-blue-300"
 							on:click={() => {
 								copied = true;
 								setTimeout(() => (copied = false), 2000);
@@ -90,13 +90,13 @@
 						>
 							pipx install terminalnotes
 							{#if copied}
-								<p class="copied-text">Copied!</p>
+								<p>Copied!</p>
 							{/if}
 						</div>
 					{:else if topic === 'terminalport'}
 						<div
 							use:clickToCopy
-							class="flex cursor-pointer items-center gap-4 duration-200 hover:text-blue-300"
+							class="flex cursor-pointer items-center gap-4 font-bold duration-200 hover:text-blue-300"
 							on:click={() => {
 								copied = true;
 								setTimeout(() => (copied = false), 3000);
@@ -104,7 +104,7 @@
 						>
 							npm i terminalport
 							{#if copied}
-								<p class="copied-text">Copied!</p>
+								<p>Copied!</p>
 							{/if}
 						</div>
 					{/if}
@@ -114,12 +114,4 @@
 	</button>
 {/if}
 
-<style lang="postcss">
-	.light-text {
-		color: #eef2ff;
-	}
-
-	.copied-text {
-		color: #93c5fd;
-	}
-</style>
+<style lang="postcss"></style>
