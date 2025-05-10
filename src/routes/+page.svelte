@@ -13,6 +13,7 @@
 	:global(html, body) {
 		background-color: #f7fee7;
 	}
+
 	:global(p, h1, h2, li, h3, h6, div) {
 		font-family: 'Courier New', Courier, monospace;
 		color: #1d4ed8;

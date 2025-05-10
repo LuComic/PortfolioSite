@@ -16,7 +16,7 @@
 >
 	<img src={terminalportPic} alt="terminalport project" class="h-4/5 w-full object-contain" />
 </button>
-<div class="mx-auto inline-block h-full w-2/3 flex-col items-center justify-start pb-8">
+<div class="mx-auto inline-block h-full w-2/3 pb-8">
 	<p class="mr-auto mb-3 text-left text-xl font-semibold">Socials</p>
 	<ul>
 		<li class="mb-2 list-disc text-left font-medium">
