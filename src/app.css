@@ -1,7 +1,15 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@plugin "daisyui";
 
 @import '@skeletonlabs/skeleton';
 @import '@skeletonlabs/skeleton/optional/presets';
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+@plugin "daisyui" {
+	themes:
+		light --default,
+		dark --prefersdark,
+		caramellatte;
+}

@@ -16,7 +16,7 @@
 		on:click|self={() => (status = false)}
 	>
 		<div
-			class="card border-surface-200-800 divide-surface-200-800 block max-w-xl divide-y overflow-hidden border-[1px] bg-lime-50"
+			class="card border-surface-200-800 divide-surface-200-800 block max-w-xl divide-y overflow-hidden border-[1px] border-none bg-[#FFF7ED]"
 			transition:fly={{ y: 200, duration: 200 }}
 		>
 			<header>
@@ -34,16 +34,16 @@
 				<div>
 					{#if topic === 'noortekunst'}
 						<h2 class="h6 text-left">HTML, CSS, Javascript</h2>
-						<h3 class="h3 text-left">noorteKunst</h3>
+						<h3 class="h3 bold-text text-left">noorteKunst</h3>
 					{:else if topic === 'moviesite'}
 						<h2 class="h6 text-left">React + tailwind</h2>
-						<h3 class="h3 text-left">StreamList</h3>
+						<h3 class="h3 bold-text text-left">StreamList</h3>
 					{:else if topic === 'termnotes'}
 						<h2 class="h6 text-left">Python</h2>
-						<h3 class="h3 text-left">termnotes</h3>
+						<h3 class="h3 bold-text text-left">termnotes</h3>
 					{:else if topic === 'terminalport'}
 						<h2 class="h6 text-left">Node js</h2>
-						<h3 class="h3 text-left">terminalport</h3>
+						<h3 class="h3 bold-text text-left">terminalport</h3>
 					{/if}
 				</div>
 				<p class="text-left">
@@ -114,4 +114,8 @@
 	</button>
 {/if}
 
-<style lang="postcss"></style>
+<style lang="postcss">
+	.bold-text {
+		font-weight: bold;
+	}
+</style>
