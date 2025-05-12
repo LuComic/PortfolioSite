@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { themes } from '$lib/themes.js';
 
-	let current_theme = $state('');
+	let current_theme = $state('halloween');
 
 	$effect(() => {
 		if (typeof window !== 'undefined') {
