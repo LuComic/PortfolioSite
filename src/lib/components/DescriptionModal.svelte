@@ -16,7 +16,7 @@
 		on:click|self={() => (status = false)}
 	>
 		<div
-			class="card border-surface-200-800 divide-surface-200-800 block max-w-xl divide-y overflow-hidden border-[1px] border-none bg-[#FFF7ED]"
+			class="card border-surface-200-800 divide-surface-200-800 modal-div block max-w-xl divide-y overflow-hidden border-[1px] border-none select-text"
 			transition:fly={{ y: 200, duration: 200 }}
 		>
 			<header>

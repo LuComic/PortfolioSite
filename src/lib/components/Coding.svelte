@@ -16,7 +16,7 @@
 		status = true;
 	}}
 >
-	<img src={movieSitePic} alt="StreamList project" class="w-full object-contain" />
+	<img src={movieSitePic} alt="StreamList project" class="w-full object-contain select-none" />
 </button>
 <div
 	class="text-container mx-auto flex h-full w-2/3 flex-col items-center justify-start pb-8"

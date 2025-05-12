@@ -6,7 +6,7 @@
 	import Socials from './Socials.svelte';
 </script>
 
-<div class="align-center my-7 grid h-full w-full grid-cols-2">
+<div class="my-7 grid h-full w-full grid-cols-2 items-center">
 	<About />
 	<Coding />
 	<Projects />

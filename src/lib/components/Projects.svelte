@@ -67,5 +67,5 @@
 		status = true;
 	}}
 >
-	<img src={termnotesPic} alt="termnotes project" class="w-full object-contain" />
+	<img src={termnotesPic} alt="termnotes project" class="w-full object-contain select-none" />
 </button>

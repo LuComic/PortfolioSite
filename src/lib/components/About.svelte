@@ -59,7 +59,7 @@
 		status = true;
 	}}
 >
-	<img src={noorteKunstPic} alt="noorteKunst project" class="w-full object-contain" />
+	<img src={noorteKunstPic} alt="noorteKunst project" class="w-full object-contain select-none" />
 </button>
 
 <style lang="postcss">

@@ -14,7 +14,11 @@
 		status = true;
 	}}
 >
-	<img src={terminalportPic} alt="terminalport project" class="h-4/5 w-full object-contain" />
+	<img
+		src={terminalportPic}
+		alt="terminalport project"
+		class="h-4/5 w-full object-contain select-none"
+	/>
 </button>
 <div class="mx-auto inline-block h-full w-2/3 pb-8">
 	<p class="mr-auto mb-3 text-left text-xl font-semibold">Socials</p>

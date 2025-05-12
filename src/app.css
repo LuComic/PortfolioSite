@@ -8,8 +8,22 @@
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
 @plugin "daisyui" {
-	themes:
-		light --default,
-		dark --prefersdark,
-		caramellatte;
+	themes: all;
+}
+
+:root {
+	/* Define CSS variables for your theme colors if you want to be even more organized */
+	--bg-white-opacity: rgba(255, 255, 255, 0.4);
+	--bg-black-opacity: rgba(0, 0, 0, 0.4);
+}
+
+/* Apply styles based on the data-theme attribute on the html element */
+html[data-theme='halloween'] .absolute.inset-0,
+html[data-theme='halloween'] .grid.card.modal-div {
+	background-color: var(--bg-black-opacity) !important;
+}
+
+html[data-theme='light'] .absolute.inset-0,
+html[data-theme='light'] .grid.card.modal-div {
+	background-color: white !important;
 }
