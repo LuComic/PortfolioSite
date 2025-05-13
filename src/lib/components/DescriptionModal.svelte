@@ -12,14 +12,14 @@
 
 {#if status}
 	<button
-		class="fixed top-0 left-0 flex h-full w-full cursor-default items-center justify-center bg-black/80"
+		class="fixed top-0 left-0 flex h-full w-full cursor-default items-center justify-center bg-black/75"
 		on:click|self={() => (status = false)}
 	>
 		<div
-			class="card border-surface-200-800 divide-surface-200-800 modal-div block max-w-xl divide-y overflow-hidden border-[1px] border-none select-text"
+			class="card bg-base-100 w-auto max-w-[60vw] shadow-sm select-text"
 			transition:fly={{ y: 200, duration: 200 }}
 		>
-			<header>
+			<figure>
 				{#if topic === 'noortekunst'}
 					<img src={noorteKunstPic} class="w-full object-cover" alt="noorteKunst" />
 				{:else if topic === 'moviesite'}
@@ -29,24 +29,22 @@
 				{:else if topic === 'terminalport'}
 					<img src={terminalportPic} class="w-full object-cover" alt="noorteKunst" />
 				{/if}
-			</header>
-			<article class="space-y-4 p-4 select-text">
-				<div>
-					{#if topic === 'noortekunst'}
-						<h2 class="h6 text-left">HTML, CSS, Javascript</h2>
-						<h3 class="h3 bold-text text-left">noorteKunst</h3>
-					{:else if topic === 'moviesite'}
-						<h2 class="h6 text-left">React + tailwind</h2>
-						<h3 class="h3 bold-text text-left">StreamList</h3>
-					{:else if topic === 'termnotes'}
-						<h2 class="h6 text-left">Python</h2>
-						<h3 class="h3 bold-text text-left">termnotes</h3>
-					{:else if topic === 'terminalport'}
-						<h2 class="h6 text-left">Node js</h2>
-						<h3 class="h3 bold-text text-left">terminalport</h3>
-					{/if}
-				</div>
-				<p class="text-left">
+			</figure>
+			<div class="card-body gap-0">
+				{#if topic === 'noortekunst'}
+					<h2 class="h6 text-left">HTML, CSS, Javascript</h2>
+					<h3 class="h3 bold-text mb-4 text-left">noorteKunst</h3>
+				{:else if topic === 'moviesite'}
+					<h2 class="h6 text-left">React + tailwind</h2>
+					<h3 class="h3 bold-text mb-4 text-left">StreamList</h3>
+				{:else if topic === 'termnotes'}
+					<h2 class="h6 text-left">Python</h2>
+					<h3 class="h3 bold-text mb-4 text-left">termnotes</h3>
+				{:else if topic === 'terminalport'}
+					<h3 class="h6 text-left">Node js</h3>
+					<h2 class="h3 bold-text mb-4 text-left">terminalport</h2>
+				{/if}
+				<p class="mb-4 text-left">
 					{#if topic === 'noortekunst'}
 						noorteKunst is a web gallery combined with social media aspects for young starting
 						artists to start or boost their art jounrey. A simple way to stand out (which is
@@ -70,46 +68,46 @@
 						options to choose from, like 'About', 'Programming', 'Projects' and 'Socials'.
 					{/if}
 				</p>
-			</article>
-			<footer class="flex items-center justify-between gap-4 p-4 select-text">
-				<small>
-					{#if topic === 'noortekunst'}
-						<a href="noortekunst.ee" class="font-bold" target="_blank">noortekunst.ee</a>
-					{:else if topic === 'moviesite'}
-						<a href="https://movie-site-gold.vercel.app" class="font-bold" target="_blank">
-							movie-site-gold.vercel.app
-						</a>
-					{:else if topic === 'termnotes'}
-						<div
-							use:clickToCopy
-							class="flex cursor-pointer items-center gap-4 font-bold duration-200 hover:text-blue-300"
-							on:click={() => {
-								copied = true;
-								setTimeout(() => (copied = false), 2000);
-							}}
-						>
-							pipx install terminalnotes
-							{#if copied}
-								<p>Copied!</p>
-							{/if}
-						</div>
-					{:else if topic === 'terminalport'}
-						<div
-							use:clickToCopy
-							class="flex cursor-pointer items-center gap-4 font-bold duration-200 hover:text-blue-300"
-							on:click={() => {
-								copied = true;
-								setTimeout(() => (copied = false), 3000);
-							}}
-						>
-							npm i terminalport
-							{#if copied}
-								<p>Copied!</p>
-							{/if}
-						</div>
-					{/if}
-				</small>
-			</footer>
+				<div class="card-actions justify-end">
+					<p class="btn btn-secondary">
+						{#if topic === 'noortekunst'}
+							<a href="noortekunst.ee" class="w-full font-bold" target="_blank">noortekunst.ee</a>
+						{:else if topic === 'moviesite'}
+							<a href="https://movie-site-gold.vercel.app" class="w-full font-bold" target="_blank">
+								movie-site-gold.vercel.app
+							</a>
+						{:else if topic === 'termnotes'}
+							<div
+								use:clickToCopy
+								class="flex w-full cursor-pointer items-center justify-around font-bold"
+								on:click={() => {
+									copied = true;
+									setTimeout(() => (copied = false), 2000);
+								}}
+							>
+								pipx install terminalnotes
+								{#if copied}
+									Copied
+								{/if}
+							</div>
+						{:else if topic === 'terminalport'}
+							<div
+								use:clickToCopy
+								class="flex w-full cursor-pointer items-center justify-around gap-4 font-bold"
+								on:click={() => {
+									copied = true;
+									setTimeout(() => (copied = false), 3000);
+								}}
+							>
+								npm i terminalport
+								{#if copied}
+									Copied!
+								{/if}
+							</div>
+						{/if}
+					</p>
+				</div>
+			</div>
 		</div>
 	</button>
 {/if}

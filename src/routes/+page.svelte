@@ -5,7 +5,7 @@
 	import Header from '$lib/components/Header.svelte';
 </script>
 
-<div class="flex min-h-screen w-screen flex-col items-center justify-start gap-10">
+<div class="flex min-h-screen w-screen flex-col items-center justify-start gap-5">
 	<Header />
 	<Welcome />
 	<DescAndImageLayout />
