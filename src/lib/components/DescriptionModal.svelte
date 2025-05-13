@@ -71,7 +71,9 @@
 				<div class="card-actions justify-end">
 					<p class="btn btn-secondary">
 						{#if topic === 'noortekunst'}
-							<a href="noortekunst.ee" class="w-full font-bold" target="_blank">noortekunst.ee</a>
+							<a href="https://noortekunst.ee" class="w-full font-bold" target="_blank"
+								>noortekunst.ee</a
+							>
 						{:else if topic === 'moviesite'}
 							<a href="https://movie-site-gold.vercel.app" class="w-full font-bold" target="_blank">
 								movie-site-gold.vercel.app
