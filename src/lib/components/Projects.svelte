@@ -50,6 +50,10 @@
 					easy or difficult it would be to create CLI's using node js. It is a very simple portfolio
 					in the terminal. <strong>npm i terminalport</strong>
 				</li>
+				<li class="mb-2 list-disc text-left font-medium">
+					<strong>Cat meme generator</strong> - A basic cat meme generator, made before noorteKunst,
+					to get the basics of HTML, CSS and Javascript down.
+				</li>
 				<li class="list-disc text-left font-medium">
 					<strong>This very portfolio</strong> - Made with the goal to learn the basic of svelte, I made
 					this portfolio. It has some cool tailwind tied to it, to make the page as fun and cool as possible

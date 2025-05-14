@@ -4,6 +4,7 @@
 	import Coding from './Coding.svelte';
 	import Projects from './Projects.svelte';
 	import Socials from './Socials.svelte';
+	import Expriences from './Expriences.svelte';
 </script>
 
 <div
@@ -12,6 +13,7 @@
 	<About />
 	<Coding />
 	<Projects />
+	<Expriences />
 	<Socials />
 </div>
 

@@ -4,6 +4,7 @@
 	import movieSitePic from '../images/moviesitebanner.png';
 	import terminalportPic from '../images/terminalportbanner.png';
 	import termnotesPic from '../images/termnotesbanner.png';
+	import catMemesPic from '../images/catMemesBanner.png';
 	import { fly } from 'svelte/transition';
 	import { clickToCopy } from '$lib/functions/clickToCopy.js';
 
@@ -28,6 +29,8 @@
 					<img src={termnotesPic} class="w-full object-cover" alt="noorteKunst" />
 				{:else if topic === 'terminalport'}
 					<img src={terminalportPic} class="w-full object-cover" alt="noorteKunst" />
+				{:else if topic === 'catMemes'}
+					<img src={catMemesPic} class="w-full object-cover" alt="noorteKunst" />
 				{/if}
 			</figure>
 			<div class="card-body gap-0">
@@ -43,6 +46,9 @@
 				{:else if topic === 'terminalport'}
 					<h3 class="h6 text-left">Node js</h3>
 					<h2 class="h3 bold-text mb-4 text-left">terminalport</h2>
+				{:else if topic === 'catMemes'}
+					<h3 class="h6 text-left">HTML, CSS, Javascript</h3>
+					<h2 class="h3 bold-text mb-4 text-left">Cat meme generator</h2>
 				{/if}
 				<p class="mb-4 text-left">
 					{#if topic === 'noortekunst'}
@@ -66,6 +72,10 @@
 					{:else if topic === 'terminalport'}
 						A very basic 30min project, that is a portfolio about me! It has nice ASCII art and
 						options to choose from, like 'About', 'Programming', 'Projects' and 'Socials'.
+					{:else if topic === 'catMemes'}
+						First ever project of any kind. Made it at as a funny cat meme generator, to introduce
+						myself to HTML, CSS and Javascript. Later changed to a gift to the Nike team I was
+						working for.
 					{/if}
 				</p>
 				<div class="card-actions justify-end">
@@ -77,6 +87,14 @@
 						{:else if topic === 'moviesite'}
 							<a href="https://movie-site-gold.vercel.app" class="w-full font-bold" target="_blank">
 								movie-site-gold.vercel.app
+							</a>
+						{:else if topic === 'catMemes'}
+							<a
+								href="https://lucomic.github.io/Cat-memes/"
+								class="w-full font-bold"
+								target="_blank"
+							>
+								https://lucomic.github.io/Cat-memes/
 							</a>
 						{:else if topic === 'termnotes'}
 							<div
