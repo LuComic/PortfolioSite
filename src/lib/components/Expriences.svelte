@@ -1,6 +1,5 @@
 <script lang="ts">
 	import catPic from '../images/cat-memes.png';
-	import { slide } from 'svelte/transition';
 	import DescriptionModal from './DescriptionModal.svelte';
 
 	let status = false;

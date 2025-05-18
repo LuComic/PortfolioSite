@@ -13,24 +13,24 @@
 
 {#if status}
 	<button
-		class="fixed top-0 left-0 flex h-full w-full cursor-default items-center justify-center bg-black/75"
+		class="fixed top-0 left-0 grid h-full w-full cursor-default place-items-center overflow-y-auto bg-black/75 p-8"
 		on:click|self={() => (status = false)}
 	>
 		<div
-			class="card bg-base-100 w-auto max-w-[60vw] shadow-sm select-text"
+			class="card bg-base-100 relative w-auto max-w-[60vw] shadow-sm select-text"
 			transition:fly={{ y: 200, duration: 200 }}
 		>
 			<figure>
 				{#if topic === 'noortekunst'}
-					<img src={noorteKunstPic} class="w-full object-cover" alt="noorteKunst" />
+					<img src={noorteKunstPic} class="w-full" alt="noorteKunst" />
 				{:else if topic === 'moviesite'}
-					<img src={movieSitePic} class="w-full object-cover" alt="noorteKunst" />
+					<img src={movieSitePic} class="w-full" alt="movieSite" />
 				{:else if topic === 'termnotes'}
-					<img src={termnotesPic} class="w-full object-cover" alt="noorteKunst" />
+					<img src={termnotesPic} class="w-full" alt="termNotes" />
 				{:else if topic === 'terminalport'}
-					<img src={terminalportPic} class="w-full object-cover" alt="noorteKunst" />
+					<img src={terminalportPic} class="w-full" alt="terminalPort" />
 				{:else if topic === 'catMemes'}
-					<img src={catMemesPic} class="w-full object-cover" alt="noorteKunst" />
+					<img src={catMemesPic} class="w-full" alt="catMemes" />
 				{/if}
 			</figure>
 			<div class="card-body gap-0">
@@ -57,7 +57,7 @@
 						basically impossible in social media), grow your portfolio and find fans. Also if you're
 						interested in art, noorteKunst is a good way to find young artists and do things that
 						you can do on every social media platform - like posts, save them and follow artists.
-						(site is right now only in estonian). (Note that I only made the frontend)
+						(site is right now only in estonian and note that I only made the frontend)
 					{:else if topic === 'moviesite'}
 						A site similar to Letterboxd, but with a new intuitive UI and a more userfriendly
 						alternative, with analytics and more. Add movies AND SHOWS (which isn't possible in
@@ -78,6 +78,28 @@
 						working for.
 					{/if}
 				</p>
+				<h4 class="h4 mb-2 text-left font-bold">Why?</h4>
+				<ul class="mb-4 text-left">
+					{#if topic === 'noortekunst'}
+						<li class="list-disc">Help out starting artists</li>
+						<li class="list-disc">Learn the basics of frontend</li>
+					{:else if topic === 'moviesite'}
+						<li class="list-disc">Make a better and improved version of Letterboxd</li>
+						<li class="list-disc">Learn react and tailwind</li>
+					{:else if topic === 'catMemes'}
+						<li class="list-disc">Make a funny site for a Nike team I was working for</li>
+					{:else if topic === 'termnotes'}
+						<li class="list-disc">
+							Make something faster than regular note taking apps but not so complicated like Doom
+							Emacs
+						</li>
+						<li class="list-disc">Learn python integration with os</li>
+					{:else if topic === 'terminalport'}
+						<li class="list-disc">Make a cool portfolio easily accessible from the terminal</li>
+						<li class="list-disc">See what packages node js has for CLIs</li>
+					{/if}
+				</ul>
+				<ul></ul>
 				<div class="card-actions justify-end">
 					<p class="btn btn-secondary">
 						{#if topic === 'noortekunst'}
